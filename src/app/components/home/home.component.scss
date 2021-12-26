@@ -1,0 +1,11 @@
+@import '../../../assets/styles/variables';
+
+.container {
+    display: flex;
+    .section {
+        flex: 1;
+    }
+    .border{
+        border-right: 1px solid $primaryColor;
+    }
+}

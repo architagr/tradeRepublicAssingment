@@ -1,0 +1,11 @@
+@import "./../../../assets/styles/variables";
+
+.list {
+    margin: 5px;
+    
+}
+:host ::ng-deep .list-item {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 1px solid $primaryColor;
+}

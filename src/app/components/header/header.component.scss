@@ -1,0 +1,10 @@
+@import './../../../assets/styles/variables';
+
+.header{
+    .header-logo{
+        width:10rem;
+        fill:$primaryColor;
+    }
+    margin: 5px;
+    padding: 5px;
+}
