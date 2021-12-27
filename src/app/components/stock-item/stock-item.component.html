@@ -1,17 +1,19 @@
-<div class="list-item" [class.clickable]="item.subscribed" [class.non-clickable]="!item.subscribed"
-    (click)="selectStock.emit(item)">
-    <div class="label">
+<div class="list-item">
+    <div class="label" (click)="selectStock.emit(item)" [class.clickable]="item.subscribed"
+        [class.non-clickable]="!item.subscribed">
         {{item.name}}
     </div>
     <div class="price">
-        <span *ngIf="item.subscribed && item.prices">{{currentPrice | currency:'USD':'symbol':'.2-2'}}</span>
+
+        <span [class.green]="priceChange()" [class.red]="item.prices && !priceChange()"
+            *ngIf="item.subscribed && item.prices">{{this.item.prices![0].price | currency:'USD':'symbol':'.2-2'}}</span>
     </div>
     <div class="action">
-        <span *ngIf="item.subscribed; else unsubscribe" title="unsubscribe">
+        <span *ngIf="item.subscribed; else subscribe" title="unsubscribe" (click)="unsubscribeEvent()">
             -
         </span>
-        <ng-template #unsubscribe>
-            <span title="subscribe">
+        <ng-template #subscribe>
+            <span title="subscribe" (click)="subscribeEvent()">
                 +
             </span>
         </ng-template>

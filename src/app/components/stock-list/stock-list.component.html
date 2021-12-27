@@ -1,4 +1,6 @@
 <h3>Stocks</h3>
 <div class="list">
-    <app-stock-item *ngFor="let item of stockList | orderBy; let i = index" [item]=item (select)="selectStock(item)"></app-stock-item>
+    <app-stock-item *ngFor="let item of stockList | orderBy; let i = index" [item]=item (select)="selectStock($event)"
+        (subscribe)="subscribeStock($event)" (unsubscribe)="unsubscribeStock($event)">
+    </app-stock-item>
 </div>

@@ -9,5 +9,4 @@ export interface IStockPrice {
     price: number;
     ask: number;
     bid: number;
-    updateTimestamp: number;
 }
